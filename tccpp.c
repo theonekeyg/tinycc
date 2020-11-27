@@ -428,7 +428,7 @@ static void add_char(CString *cstr, int c)
 /* allocate a new token */
 static TokenSym *tok_alloc_new(TokenSym **pts, const char *str, int len)
 {
-    TokenSym *ts, **ptable;
+    TokenSym *ts;
     int i;
 
     if (tok_ident >= SYM_FIRST_ANOM) 
@@ -437,8 +437,7 @@ static TokenSym *tok_alloc_new(TokenSym **pts, const char *str, int len)
     /* expand token table if needed */
     i = tok_ident - TOK_IDENT;
     if ((i % TOK_ALLOC_INCR) == 0) {
-        ptable = tcc_realloc(table_ident, (i + TOK_ALLOC_INCR) * sizeof(TokenSym *));
-        table_ident = ptable;
+        table_ident = tcc_realloc(table_ident, (i + TOK_ALLOC_INCR) * sizeof(TokenSym *));
     }
 
     ts = tal_realloc(toksym_alloc, 0, sizeof(TokenSym) + len);

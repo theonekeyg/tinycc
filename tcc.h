@@ -1050,8 +1050,8 @@ struct filespec {
 #define TOK_UMULL   0x86 /* unsigned 32x32 -> 64 mul */
 #define TOK_ADDC1   0x87 /* add with carry generation */
 #define TOK_ADDC2   0x88 /* add with carry use */
-#define TOK_SUBC1   0x89 /* add with carry generation */
-#define TOK_SUBC2   0x8a /* add with carry use */
+#define TOK_SUBC1   0x89 /* subtract with carry generation */
+#define TOK_SUBC2   0x8a /* subtract with carry use */
 #define TOK_SHL     '<' /* shift left */
 #define TOK_SAR     '>' /* signed shift right */
 #define TOK_SHR     0x8b /* unsigned shift right */
